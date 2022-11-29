@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "Q:\\FlutProject\\flutter_application_1\\build\\host\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Jozof\\.gradle\\caches\\transforms-3\\329584bb81139f2f81fdd7a3c4abaab7\\transformed\\appcompat-1.0.2\\res\\values-port\\values-port.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "55",
+                        "endOffsets": "106"
+                    }
+                }
+            ]
+        }
+    ]
+}

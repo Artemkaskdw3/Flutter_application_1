@@ -9,7 +9,7 @@ import 'package:http/http.dart' as http;
 class RecipesApi{
 
   static Future<List<Recipes>> getTopPopular() async {
-    Uri url = Uri.parse('https://api.spoonacular.com/recipes/716429/information?includeNutrition=false');
+    Uri url = Uri.parse('https://api.spoonacular.com/recipes/random?number=2');
     Map<String, String> headers = HashMap();
     headers.addAll({'X-API-KEY': '5715318a4f22412aafba23199118a860'});
     headers.addAll({'content-type': 'application/json'});
@@ -20,6 +20,7 @@ class RecipesApi{
     );
     final responseText = utf8.decode(response.bodyBytes);
     final x = json.decode(responseText);
-    return List<Recipes>.from(x["recipess"].map((e) => Recipes.fromJson(e)).toList());
+   
+    return List<Recipes>.from(x['recipes'].map((e) => Recipes.fromJson(e)).toList());
   }
 }

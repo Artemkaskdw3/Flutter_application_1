@@ -63,7 +63,16 @@ class _MyAppState extends State<MyApp> {
                     itemBuilder: (context, index)
                     {
                       final recipe = films![index];
-                      return Text(recipe.title);
+                      return Padding(padding: EdgeInsets.all(10),
+                      child: Row(
+                        children: [
+                          Text(recipe.id.toString()),
+                          Text(recipe.title)
+
+                        ],
+                      ),
+                      
+                                            );
                     }
                   );
                 }
