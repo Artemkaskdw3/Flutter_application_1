@@ -62,7 +62,7 @@ class _MyAppState extends State<MyApp> {
                     shrinkWrap: true,
                     itemBuilder: (context, index)
                     {
-                      final recipe = films![index];
+                      final recipe = films[index];
                       return Padding(padding: EdgeInsets.all(10),
                       child: Row(
                         children: [
