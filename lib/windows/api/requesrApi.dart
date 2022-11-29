@@ -20,6 +20,6 @@ class RecipesApi{
     );
     final responseText = utf8.decode(response.bodyBytes);
     final x = json.decode(responseText);
-    return List<Recipes>.from(x["recipes"].map((e) => Recipes.fromJson(e)).toList());
+    return List<Recipes>.from(x["recipess"].map((e) => Recipes.fromJson(e)).toList());
   }
 }
