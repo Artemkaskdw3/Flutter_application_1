@@ -8,8 +8,8 @@ import 'package:http/http.dart' as http;
 
 class RecipesApi{
 
-  static Future<List<Recipes>> getTopPopular() async {
-    Uri url = Uri.parse('https://api.spoonacular.com/recipes/random?number=2');
+  static Future<List<Recipes>> getRecipe() async {
+    Uri url = Uri.parse('https://api.spoonacular.com/recipes/random?number=1');
     Map<String, String> headers = HashMap();
     headers.addAll({'X-API-KEY': '5715318a4f22412aafba23199118a860'});
     headers.addAll({'content-type': 'application/json'});
