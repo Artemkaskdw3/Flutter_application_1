@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/windows/Auth/landing.dart';
 import 'package:flutter_application_1/windows/home.dart';
 import 'package:flutter_application_1/windows/pages/detailRecipe.dart';
 import 'package:flutter_application_1/windows/pages/screen.dart';
@@ -23,18 +24,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
-         body: Center(child: ElevatedButton(onPressed: () {
-           Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        Screen(),
-                                  ));
-                                  
-         },
-         child: Text("sd"),
-         )),
-    );
+    return MaterialApp(home:  LandingPage(),);
   }
   }
