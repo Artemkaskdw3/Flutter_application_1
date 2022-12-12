@@ -5,26 +5,26 @@ class Recipes {
         required this.id,
         required this.title,
         required this.image,
-        required this.extendedIngredients,
+        // required this.extendedIngredients,
     });
 
     int id;
     String title;
     var image;
-    List<ExtendedIngredients> extendedIngredients;
+    // List<ExtendedIngredients> extendedIngredients;
 
     factory Recipes.fromJson(Map<String, dynamic> json) => Recipes(
         id: json["id"],
         title: json["title"],
         image: json["image"],
-        extendedIngredients: List<ExtendedIngredients>.from((json['extendedIngredients'].map((x) => ExtendedIngredients.fromJson(x)))),
+        // extendedIngredients: List<ExtendedIngredients>.from((json['extendedIngredients'].map((x) => ExtendedIngredients.fromJson(x)))),
     );
 
     Map<String, dynamic> toJson() => {
         "id": id,
         "title": title,
         "image": image ?? '',
-        "extendedIngredients": List<dynamic>.from(extendedIngredients.map((e) => e.toJson())),
+        // "extendedIngredients": List<dynamic>.from(extendedIngredients.map((e) => e.toJson())),
     };
 }
 

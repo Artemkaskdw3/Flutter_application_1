@@ -10,12 +10,12 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 Future <void> main() async {
-   void initFirebase() async {
-    WidgetsFlutterBinding.ensureInitialized();
-    await Firebase.initializeApp();
-  }
+  //  void initFirebase() async {
+  //   WidgetsFlutterBinding.ensureInitialized();
+  //   await Firebase.initializeApp();
+  // }
   
-  initFirebase();
+  // initFirebase();
  runApp(MaterialApp(home: MyApp(),));
 }
 class MyApp extends StatelessWidget {
