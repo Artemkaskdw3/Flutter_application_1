@@ -174,6 +174,15 @@ class _ScreenState extends State<Screen> {
                               itemBuilder: (context, index) {
                                 final recipeSerrch = recipessearch[index];
                                 return Container(
+    //                                decoration: const BoxDecoration(
+    //   border: Border(
+    //     top: BorderSide(color: Colors.black26),
+    //     left: BorderSide(color: Colors.black26),
+    //     right: BorderSide(color: Colors.black26),
+    //     bottom: BorderSide(color: Colors.black26),
+    //   ),
+    //   color: Colors.white,
+    // ),
                                   child: GestureDetector(
                                     child: Column(
                                       children: [

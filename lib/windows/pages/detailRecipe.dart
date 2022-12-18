@@ -3,6 +3,8 @@ import 'package:flutter_application_1/windows/api/requesrApi.dart';
 import 'package:flutter_application_1/windows/models/informationOfRecipeDETAIL.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
+import '../models/AnalyzedRecipeInformation.dart';
+
 class DetailRecipe extends StatefulWidget {
   final int recipeId;
   const DetailRecipe(this.recipeId, {Key? key}) : super(key: key);
@@ -54,7 +56,6 @@ class _DetailRecipeState extends State<DetailRecipe> {
                     child: Text(
                       details.title,
                       style: TextStyle(fontSize: 25),
-                      
                     ),
                   ),
                   SizedBox(
@@ -67,16 +68,52 @@ class _DetailRecipeState extends State<DetailRecipe> {
                       details.image ??
                           "https://spoonacular.com/recipeImages/642054-556x370.jpg",
                       fit: BoxFit.none,
-                      
                     ),
                   ),
                   SizedBox(
                     child: Padding(padding: EdgeInsets.only(top: 20)),
                   ),
                   Container(
-                  alignment: Alignment.bottomLeft,
-                  child: getOriginal(listOriginal)
-                  ),
+                      alignment: Alignment.bottomLeft,
+                      child: getOriginal(listOriginal)),
+                  Container(
+                      child: FutureBuilder<List<StepsOfRecipe>>(
+                    future: RecipesApi.getSteps(widget.recipeId),
+                    builder: (context, snapshot) {
+                      if (!snapshot.hasData) {
+                        return const Center(child: CircularProgressIndicator());
+                      }
+
+                      final stepsSnap = snapshot.data;
+                      final stepsLenght = stepsSnap!.length;
+                      final listSteps = stepsSnap;
+
+                      Widget getInstructions(
+                          List<StepsOfRecipe> listSteps) {
+                        String listStepss = "";
+                        for (var i = 0; i < stepsLenght; i++) {
+                          for(var j = 0; j < stepsSnap[i].steps.length; j++){
+
+                            listStepss += stepsSnap[i].steps[j].step + ", " + "\n";
+                          }
+                        }
+                        return AutoSizeText("Instructions: \n $listStepss",
+                            style: TextStyle(fontSize: 20),
+                            textAlign: TextAlign.left);
+                      }
+
+                        return Column(
+
+                          children: [
+                            Container(
+                             child: getInstructions(listSteps)
+                            ),
+                          ],
+                        );
+
+
+                    },
+                  ))
                 ],
               ))
             ],
