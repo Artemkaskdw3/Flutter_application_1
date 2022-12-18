@@ -5,6 +5,7 @@ import 'package:flutter_application_1/windows/models/informationOfRecipe.dart';
 
 import 'package:http/http.dart' as http;
 
+import '../models/informationOfRecipeDETAIL.dart';
 import '../models/serachInformation.dart';
 
 class RecipesApi {
@@ -38,5 +39,21 @@ class RecipesApi {
     final responseText = utf8.decode(response.bodyBytes);
     final x = json.decode(responseText);
     return List<Search>.from(x['results'].map((e) => Search.fromJson(e)).toList());
+  }
+
+  static Future<RecipesDetail> getDetailInformation(int idRecipe) async {
+    Uri url = Uri.parse('https://api.spoonacular.com/recipes/${idRecipe}/information');
+    Map<String, String> headers = HashMap();
+    headers.addAll({'X-API-KEY': '5715318a4f22412aafba23199118a860'});
+    headers.addAll({'content-type': 'application/json'});
+
+    final response = await http.get(
+      url,
+      headers: headers,
+    );
+    final responseText = utf8.decode(response.bodyBytes);
+    final x = json.decode(responseText);
+    RecipesDetail recipesDetaill = RecipesDetail.fromJson(x);
+    return recipesDetaill;
   }
 }

@@ -7,10 +7,10 @@ INJECTED from Q:\FlutProject\flutter_application_1\.android\app\src\main\Android
 MERGED from [:flutter] Q:\FlutProject\flutter_application_1\.android\Flutter\build\intermediates\merged_manifest\debug\AndroidManifest.xml:3:1-26:12
 MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\Jozof\.gradle\caches\transforms-3\a7317bee857acd4ea19f0d56e2a92818\transformed\appcompat-1.0.2\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Jozof\.gradle\caches\transforms-3\5613fa4c4ffbbff256a487e8a06a430c\transformed\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
-MERGED from [:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.1.5\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
-MERGED from [:cloud_firestore] C:\flutter\.pub-cache\hosted\pub.dartlang.org\cloud_firestore-4.1.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
-MERGED from [:firebase_core] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-2.3.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
-MERGED from [:fluttertoast] C:\flutter\.pub-cache\hosted\pub.dartlang.org\fluttertoast-8.1.1\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.2.1\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
+MERGED from [:cloud_firestore] C:\flutter\.pub-cache\hosted\pub.dartlang.org\cloud_firestore-4.2.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
+MERGED from [:firebase_core] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-2.4.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
+MERGED from [:fluttertoast] C:\flutter\.pub-cache\hosted\pub.dartlang.org\fluttertoast-8.1.2\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\Jozof\.gradle\caches\transforms-3\09f4f3349e09a0a6e74d78afeb70e89e\transformed\vectordrawable-animated-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Jozof\.gradle\caches\transforms-3\9e14bf9d24323ec841a3e31cde5f524b\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Jozof\.gradle\caches\transforms-3\33022110ab8edaeede9665dd42ecaa6e\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -90,12 +90,12 @@ MERGED from [:flutter] Q:\FlutProject\flutter_application_1\.android\Flutter\bui
 MERGED from [:flutter] Q:\FlutProject\flutter_application_1\.android\Flutter\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:5-24:19
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Jozof\.gradle\caches\transforms-3\5613fa4c4ffbbff256a487e8a06a430c\transformed\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Jozof\.gradle\caches\transforms-3\5613fa4c4ffbbff256a487e8a06a430c\transformed\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
-MERGED from [:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.1.5\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
-MERGED from [:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.1.5\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
-MERGED from [:cloud_firestore] C:\flutter\.pub-cache\hosted\pub.dartlang.org\cloud_firestore-4.1.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
-MERGED from [:cloud_firestore] C:\flutter\.pub-cache\hosted\pub.dartlang.org\cloud_firestore-4.1.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
-MERGED from [:firebase_core] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-2.3.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
-MERGED from [:firebase_core] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-2.3.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
+MERGED from [:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.2.1\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
+MERGED from [:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.2.1\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
+MERGED from [:cloud_firestore] C:\flutter\.pub-cache\hosted\pub.dartlang.org\cloud_firestore-4.2.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
+MERGED from [:cloud_firestore] C:\flutter\.pub-cache\hosted\pub.dartlang.org\cloud_firestore-4.2.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
+MERGED from [:firebase_core] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-2.4.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
+MERGED from [:firebase_core] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-2.4.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
 MERGED from [com.google.firebase:firebase-auth:21.1.0] C:\Users\Jozof\.gradle\caches\transforms-3\ea126544dbffa99310ce648c295a384a\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:26:5-71:19
 MERGED from [com.google.firebase:firebase-auth:21.1.0] C:\Users\Jozof\.gradle\caches\transforms-3\ea126544dbffa99310ce648c295a384a\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:26:5-71:19
 MERGED from [com.google.firebase:firebase-firestore:24.4.0] C:\Users\Jozof\.gradle\caches\transforms-3\d113a99fde888a0c7352df9a6b5c65bb\transformed\jetified-firebase-firestore-24.4.0\AndroidManifest.xml:15:5-23:19
@@ -178,14 +178,14 @@ MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\Jozof\.gradle\caches\t
 MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\Jozof\.gradle\caches\transforms-3\a7317bee857acd4ea19f0d56e2a92818\transformed\appcompat-1.0.2\AndroidManifest.xml:20:5-44
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Jozof\.gradle\caches\transforms-3\5613fa4c4ffbbff256a487e8a06a430c\transformed\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Jozof\.gradle\caches\transforms-3\5613fa4c4ffbbff256a487e8a06a430c\transformed\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41
-MERGED from [:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.1.5\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.1.5\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:cloud_firestore] C:\flutter\.pub-cache\hosted\pub.dartlang.org\cloud_firestore-4.1.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:cloud_firestore] C:\flutter\.pub-cache\hosted\pub.dartlang.org\cloud_firestore-4.1.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:firebase_core] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-2.3.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:firebase_core] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-2.3.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:fluttertoast] C:\flutter\.pub-cache\hosted\pub.dartlang.org\fluttertoast-8.1.1\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:fluttertoast] C:\flutter\.pub-cache\hosted\pub.dartlang.org\fluttertoast-8.1.1\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.2.1\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.2.1\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:cloud_firestore] C:\flutter\.pub-cache\hosted\pub.dartlang.org\cloud_firestore-4.2.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:cloud_firestore] C:\flutter\.pub-cache\hosted\pub.dartlang.org\cloud_firestore-4.2.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:firebase_core] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-2.4.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:firebase_core] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-2.4.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:fluttertoast] C:\flutter\.pub-cache\hosted\pub.dartlang.org\fluttertoast-8.1.2\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:fluttertoast] C:\flutter\.pub-cache\hosted\pub.dartlang.org\fluttertoast-8.1.2\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\Jozof\.gradle\caches\transforms-3\09f4f3349e09a0a6e74d78afeb70e89e\transformed\vectordrawable-animated-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\Jozof\.gradle\caches\transforms-3\09f4f3349e09a0a6e74d78afeb70e89e\transformed\vectordrawable-animated-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Jozof\.gradle\caches\transforms-3\9e14bf9d24323ec841a3e31cde5f524b\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
@@ -295,11 +295,11 @@ ADDED from [:flutter] Q:\FlutProject\flutter_application_1\.android\Flutter\buil
 	android:name
 		ADDED from [:flutter] Q:\FlutProject\flutter_application_1\.android\Flutter\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-46
 service#com.google.firebase.components.ComponentDiscoveryService
-ADDED from [:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.1.5\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
-MERGED from [:cloud_firestore] C:\flutter\.pub-cache\hosted\pub.dartlang.org\cloud_firestore-4.1.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
-MERGED from [:cloud_firestore] C:\flutter\.pub-cache\hosted\pub.dartlang.org\cloud_firestore-4.1.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
-MERGED from [:firebase_core] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-2.3.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
-MERGED from [:firebase_core] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-2.3.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
+ADDED from [:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.2.1\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
+MERGED from [:cloud_firestore] C:\flutter\.pub-cache\hosted\pub.dartlang.org\cloud_firestore-4.2.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
+MERGED from [:cloud_firestore] C:\flutter\.pub-cache\hosted\pub.dartlang.org\cloud_firestore-4.2.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
+MERGED from [:firebase_core] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-2.4.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
+MERGED from [:firebase_core] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-2.4.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
 MERGED from [com.google.firebase:firebase-auth:21.1.0] C:\Users\Jozof\.gradle\caches\transforms-3\ea126544dbffa99310ce648c295a384a\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:64:9-70:19
 MERGED from [com.google.firebase:firebase-auth:21.1.0] C:\Users\Jozof\.gradle\caches\transforms-3\ea126544dbffa99310ce648c295a384a\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:64:9-70:19
 MERGED from [com.google.firebase:firebase-firestore:24.4.0] C:\Users\Jozof\.gradle\caches\transforms-3\d113a99fde888a0c7352df9a6b5c65bb\transformed\jetified-firebase-firestore-24.4.0\AndroidManifest.xml:16:9-22:19
@@ -313,25 +313,25 @@ MERGED from [com.google.firebase:firebase-common:20.2.0] C:\Users\Jozof\.gradle\
 	android:directBootAware
 		ADDED from [com.google.firebase:firebase-common:20.2.0] C:\Users\Jozof\.gradle\caches\transforms-3\be4e127f5c507aa2bbff88d15520e5ed\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:34:13-43
 	android:name
-		ADDED from [:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.1.5\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:18-89
+		ADDED from [:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.2.1\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:18-89
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar
-ADDED from [:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.1.5\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+ADDED from [:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.2.1\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 	android:value
-		ADDED from [:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.1.5\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+		ADDED from [:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.2.1\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 	android:name
-		ADDED from [:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.1.5\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
+		ADDED from [:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.2.1\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar
-ADDED from [:cloud_firestore] C:\flutter\.pub-cache\hosted\pub.dartlang.org\cloud_firestore-4.1.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+ADDED from [:cloud_firestore] C:\flutter\.pub-cache\hosted\pub.dartlang.org\cloud_firestore-4.2.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 	android:value
-		ADDED from [:cloud_firestore] C:\flutter\.pub-cache\hosted\pub.dartlang.org\cloud_firestore-4.1.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+		ADDED from [:cloud_firestore] C:\flutter\.pub-cache\hosted\pub.dartlang.org\cloud_firestore-4.2.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 	android:name
-		ADDED from [:cloud_firestore] C:\flutter\.pub-cache\hosted\pub.dartlang.org\cloud_firestore-4.1.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-134
+		ADDED from [:cloud_firestore] C:\flutter\.pub-cache\hosted\pub.dartlang.org\cloud_firestore-4.2.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-134
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar
-ADDED from [:firebase_core] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-2.3.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+ADDED from [:firebase_core] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-2.4.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 	android:value
-		ADDED from [:firebase_core] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-2.3.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+		ADDED from [:firebase_core] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-2.4.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 	android:name
-		ADDED from [:firebase_core] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-2.3.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
+		ADDED from [:firebase_core] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-2.4.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.google.firebase:firebase-auth:21.1.0] C:\Users\Jozof\.gradle\caches\transforms-3\ea126544dbffa99310ce648c295a384a\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:24:5-79
 MERGED from [com.google.firebase:firebase-firestore:24.4.0] C:\Users\Jozof\.gradle\caches\transforms-3\d113a99fde888a0c7352df9a6b5c65bb\transformed\jetified-firebase-firestore-24.4.0\AndroidManifest.xml:12:5-79

@@ -90,31 +90,31 @@
 58-->[:flutter] Q:\FlutProject\flutter_application_1\.android\Flutter\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:13-35
 59
 60        <service
-60-->[:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.1.5\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
+60-->[:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.2.1\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
 61            android:name="com.google.firebase.components.ComponentDiscoveryService"
-61-->[:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.1.5\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:18-89
+61-->[:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.2.1\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:18-89
 62            android:directBootAware="true"
 62-->[com.google.firebase:firebase-common:20.2.0] C:\Users\Jozof\.gradle\caches\transforms-3\be4e127f5c507aa2bbff88d15520e5ed\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:34:13-43
 63            android:exported="false" >
 63-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Jozof\.gradle\caches\transforms-3\ea126544dbffa99310ce648c295a384a\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:66:13-37
 64            <meta-data
-64-->[:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.1.5\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+64-->[:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.2.1\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 65                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
-65-->[:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.1.5\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
+65-->[:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.2.1\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
 66                android:value="com.google.firebase.components.ComponentRegistrar" />
-66-->[:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.1.5\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+66-->[:firebase_auth] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_auth-4.2.1\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 67            <meta-data
-67-->[:cloud_firestore] C:\flutter\.pub-cache\hosted\pub.dartlang.org\cloud_firestore-4.1.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+67-->[:cloud_firestore] C:\flutter\.pub-cache\hosted\pub.dartlang.org\cloud_firestore-4.2.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 68                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
-68-->[:cloud_firestore] C:\flutter\.pub-cache\hosted\pub.dartlang.org\cloud_firestore-4.1.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-134
+68-->[:cloud_firestore] C:\flutter\.pub-cache\hosted\pub.dartlang.org\cloud_firestore-4.2.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-134
 69                android:value="com.google.firebase.components.ComponentRegistrar" />
-69-->[:cloud_firestore] C:\flutter\.pub-cache\hosted\pub.dartlang.org\cloud_firestore-4.1.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+69-->[:cloud_firestore] C:\flutter\.pub-cache\hosted\pub.dartlang.org\cloud_firestore-4.2.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 70            <meta-data
-70-->[:firebase_core] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-2.3.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+70-->[:firebase_core] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-2.4.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 71                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
-71-->[:firebase_core] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-2.3.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
+71-->[:firebase_core] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-2.4.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
 72                android:value="com.google.firebase.components.ComponentRegistrar" />
-72-->[:firebase_core] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-2.3.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+72-->[:firebase_core] C:\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_core-2.4.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 73            <meta-data
 73-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Jozof\.gradle\caches\transforms-3\ea126544dbffa99310ce648c295a384a\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:67:13-69:85
 74                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"

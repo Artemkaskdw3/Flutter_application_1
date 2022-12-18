@@ -9,6 +9,7 @@ import 'package:flutter_application_1/windows/models/serachInformation.dart';
 import 'package:flutter_application_1/windows/pages/detailRecipe.dart';
 
 import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
 
 class Screen extends StatefulWidget {
   const Screen({super.key});
@@ -21,210 +22,205 @@ class _ScreenState extends State<Screen> {
   late Future<List<Recipes>> recipes;
   String _textFromField = ' ';
   Future<List<Search>>? mFuture;
+
+  final ScrollController _controller = ScrollController();
+
+  void _scrollToTop() {
+    if (_controller.hasClients) {
+      _controller.animateTo(0,
+          duration: const Duration(milliseconds: 30), curve: Curves.linear);
+    }
+  }
+
   @override
   void initState() {
     super.initState();
     recipes = RecipesApi.getRecipe();
-
-                    
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ZaEdy'),
+        title: const Text(
+          'ZaEdy',
+          style: TextStyle(fontSize: 30),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.black,
+        actions: [
+          IconButton(
+              onPressed: () {
+                setState(() {
+                  _scrollToTop();
+                  Screen();
+
+                  _textFromField = "";
+                });
+              },
+              icon: Icon(Icons.refresh)),
+        ],
       ),
-      body: Expanded (
-            
-        child: SingleChildScrollView (child: Column(
-          children: [
-            Container(
-              
-              margin: const EdgeInsets.only(top: 2, left: 14),
-              height: 30,
-              child: TextField(
-                onSubmitted: (value) {
-                  _textFromField = value;
-                  setState(() {
-                    
-                    
-                      mFuture = RecipesApi.getSearch(value);
-                    
-                  });
-                },
-                decoration: InputDecoration(
-                  hintStyle: TextStyle(color: Colors.black),
-                  hintText: "Search",
-                  icon: const Icon(Icons.search),
-                  filled: true,
-                  fillColor: Colors.white,
-                ),
+      body: Column(
+        children: [
+          SizedBox(
+            child: Padding(padding: EdgeInsets.only(bottom: 15)),
+          ),
+          Container(
+            padding: EdgeInsets.only(right: 20),
+            child: TextField(
+              style: TextStyle(fontSize: 25),
+              onSubmitted: (value) {
+                _textFromField = value;
+                setState(() {
+                  mFuture = RecipesApi.getSearch(value);
+                  _scrollToTop();
+                });
+              },
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.symmetric(vertical: 1),
+                hintStyle: TextStyle(color: Colors.black45, fontSize: 25),
+                hintText: "Search",
+                icon: const Icon(Icons.search),
+                filled: true,
+                fillColor: Colors.white30,
+                border: OutlineInputBorder(),
               ),
             ),
-            Expanded(
-              child: FutureBuilder<List<Search>>(
-                  future: mFuture,
-                  builder: (context, snapshot) {
-                    if (!snapshot.hasData) {
-                      return  Container(
-              child: FutureBuilder<List<Recipes>>(
-                  future: RecipesApi.getRecipe(),
-                  builder: (context, snapshot) {
-                    if (!snapshot.hasData) {
-                      return const Center(child: CircularProgressIndicator());
-                    }
-                    final recipess = snapshot.data;
-                    return ListView.builder(
-                        physics: NeverScrollableScrollPhysics(),
-                        itemCount: recipess!.length,
-                        shrinkWrap: true,
-                        itemBuilder: (context, index) {
-                          final recipe = recipess[index];
-                          return Container(
-                            child: GestureDetector(
-                              child: Column(
-                                children: [
-                                  Text(
-                                    recipe.title,
-                                    style: TextStyle(fontSize: 25),
-                                  ),
-                                  SizedBox(
-                                    child: Padding(padding: EdgeInsets.only(bottom: 15) ),
-                                  ),
-                                  Image.network(
-                                    recipe.image.toString(),
-                                    fit: BoxFit.fill,
-                                    width: 350,
-                                    height: 200,
-                                  ),
-                                    SizedBox(
-                                    child: Padding(padding: EdgeInsets.only(top: 100) ),
-                                  ),
-                                ],
-                              ),
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        DetailRecipe(recipe.id),
+          ),
+          SizedBox(
+            child: Padding(padding: EdgeInsets.only(bottom: 15)),
+          ),
+          Expanded(
+            child: FutureBuilder<List<Search>>(
+                future: mFuture,
+                builder: (context, snapshot) {
+                  if (!snapshot.hasData || _textFromField == "") {
+                    return Container(
+                      child: FutureBuilder<List<Recipes>>(
+                          future: RecipesApi.getRecipe(),
+                          builder: (context, snapshott) {
+                            if (!snapshott.hasData) {
+                              return const Center(
+                                  child: CircularProgressIndicator());
+                            }
+                            final recipess = snapshott.data;
+
+                            return Scrollbar(
+                                child: ListView.builder(
+                                    itemCount: recipess!.length,
+                                    shrinkWrap: true,
+                                    controller: _controller,
+                                    itemBuilder: (context, index) {
+                                      final recipe = recipess[index];
+
+                                      return Container(
+                                        child: GestureDetector(
+                                          child: Column(
+                                            children: [
+                                              Container(
+                                                alignment: Alignment.topLeft,
+                                                child: Text(
+                                                  recipe.title,
+                                                  style:
+                                                      TextStyle(fontSize: 25),
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                child: Padding(
+                                                    padding: EdgeInsets.only(
+                                                        bottom: 15)),
+                                              ),
+                                              Container(
+                                                width: 350,
+                                                height: 200,
+                                                child: Image.network(
+                                                  recipe.image ??
+                                                      "https://spoonacular.com/recipeImages/642054-556x370.jpg",
+                                                  fit: BoxFit.fill,
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                child: Padding(
+                                                    padding: EdgeInsets.only(
+                                                        top: 50)),
+                                              ),
+                                            ],
+                                          ),
+                                          onTap: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    DetailRecipe(recipe.id),
+                                              ),
+                                            );
+                                          },
+                                        ),
+                                      );
+                                    }));
+                          }),
+                    );
+                  }
+                  final recipessearch = snapshot.data;
+                  return Container(
+                      margin:
+                          const EdgeInsets.only(left: 14, top: 4, bottom: 4),
+                      child: Scrollbar(
+                          child: ListView.builder(
+                              shrinkWrap: true,
+                              itemCount: recipessearch!.length,
+                              controller: _controller,
+                              itemBuilder: (context, index) {
+                                final recipeSerrch = recipessearch[index];
+                                return Container(
+                                  child: GestureDetector(
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          alignment: Alignment.topLeft,
+                                          child: Text(
+                                            recipeSerrch.title,
+                                            style: TextStyle(fontSize: 25),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          child: Padding(
+                                              padding:
+                                                  EdgeInsets.only(bottom: 15)),
+                                        ),
+                                        Image.network(
+                                          recipeSerrch.image ??
+                                              "https://spoonacular.com/recipeImages/642054-556x370.jpg",
+                                          fit: BoxFit.fill,
+                                          width: 350,
+                                          height: 200,
+                                        ),
+                                        SizedBox(
+                                          child: Padding(
+                                              padding:
+                                                  EdgeInsets.only(top: 50)),
+                                        ),
+                                      ],
+                                    ),
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                DetailRecipe(recipeSerrch.id)),
+                                      );
+                                    },
                                   ),
                                 );
-                              },
-                            ),
-                          );
-                        });
-                  }),
-            );
-                    }
-                    final recipessearch = snapshot.data;
-                    return Container(
-                        margin: const EdgeInsets.only(left: 14, top: 4, bottom: 4),
-                        child: ListView.builder(
-                            shrinkWrap: true,
-                            physics: NeverScrollableScrollPhysics(),
-                            itemCount: recipessearch!.length,
-                            itemBuilder: (context, index) {
-                              final recipeSerrch = recipessearch[index];
-                              return Container(
-                                child: GestureDetector(
-                                  child: Column(
-                                    children: [
-                                      Text(
-                                        recipeSerrch.title,
-                                        style: TextStyle(fontSize: 25),
-                                      ),
-                                      SizedBox(
-                                        child: Padding(
-                                            padding:
-                                                EdgeInsets.only(bottom: 15)),
-                                      ),
-                                      Image.network(
-                                        recipeSerrch.image.toString(),
-                                        fit: BoxFit.fill,
-                                        width: 350,
-                                        height: 200,
-                                      ),
-                                      SizedBox(
-                                        child: Padding(
-                                            padding: EdgeInsets.only(top: 100)),
-                                      ),
-                                    ],
-                                  ),
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) =>
-                                            DetailRecipe(recipeSerrch.id),
-                                      ),
-                                    );
-                                  },
-                                ),
-                              );
-                            }));
-                  }),
-            ),
-
-            SizedBox(
-              height: 20,
-            ),
-
-            // Container(
-            //   child: FutureBuilder<List<Recipes>>(
-            //       future: RecipesApi.getRecipe(),
-            //       builder: (context, snapshot) {
-            //         if (!snapshot.hasData) {
-            //           return const Center(child: CircularProgressIndicator());
-            //         }
-            //         final recipess = snapshot.data;
-            //         return ListView.builder(
-            //             physics: NeverScrollableScrollPhysics(),
-            //             itemCount: recipess!.length,
-            //             shrinkWrap: true,
-            //             itemBuilder: (context, index) {
-            //               final recipe = recipess[index];
-            //               return Container(
-            //                 child: GestureDetector(
-            //                   child: Column(
-            //                     children: [
-            //                       Text(
-            //                         recipe.title,
-            //                         style: TextStyle(fontSize: 25),
-            //                       ),
-            //                       SizedBox(
-            //                         child: Padding(padding: EdgeInsets.only(bottom: 15) ),
-            //                       ),
-            //                       Image.network(
-            //                         recipe.image.toString(),
-            //                         fit: BoxFit.fill,
-            //                         width: 350,
-            //                         height: 200,
-            //                       ),
-            //                         SizedBox(
-            //                         child: Padding(padding: EdgeInsets.only(top: 100) ),
-            //                       ),
-            //                     ],
-            //                   ),
-            //                   onTap: () {
-            //                     Navigator.push(
-            //                       context,
-            //                       MaterialPageRoute(
-            //                         builder: (context) =>
-            //                             DetailRecipe(recipe.id),
-            //                       ),
-            //                     );
-            //                   },
-            //                 ),
-            //               );
-            //             });
-            //       }),
-            // ),
-          ],
-        ),
-      
-    )));
+                              })));
+                }),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+        ],
+      ),
+    );
   }
 }
-
