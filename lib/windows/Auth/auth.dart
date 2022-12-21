@@ -1,9 +1,14 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_application_1/windows/Auth/services/user.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
+import 'services/authSERVICES.dart';
 
 class Authc extends StatefulWidget {
   const Authc({super.key});
@@ -19,6 +24,9 @@ class _AuthcState extends State<Authc> {
   String _login ='';
   String _password='';
   bool showLogin = true;
+
+    final AuthService _authService = AuthService();
+
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +91,7 @@ class _AuthcState extends State<Authc> {
         child: Column(children: [
           Padding(
             padding: EdgeInsets.only(bottom: 20, top: 10),
-            child: _input(Icon(Icons.login), 'Login', _loginContller, false),
+            child: _input(Icon(Icons.login), 'Email', _loginContller, false),
           ),
           Padding(
             padding: EdgeInsets.only(bottom: 20),
@@ -104,13 +112,53 @@ class _AuthcState extends State<Authc> {
       );
     }
 
-    void _buttonAction(){
+    void _loginButtonAction()async{
       _login = _loginContller.text;
       _password =  _passwordContller.text;
 
-      _loginContller.clear();
-      _passwordContller.clear();
-      
+      if(_login.isEmpty || _password.isEmpty) return;
+
+      AuthUser? user = await _authService.signInWithEmailAndPassword(_login.trim(), _password.trim());
+      if(user == null)
+      {
+           Fluttertoast.showToast(
+        msg: "Check password or email",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 2,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+        fontSize: 16.0
+    );
+      }else{
+         
+      }
+
+    
+    }
+      void _registerButtonAction()async{
+      _login = _loginContller.text;
+      _password =  _passwordContller.text;
+
+      if(_login.isEmpty || _password.isEmpty) return;
+
+      AuthUser? user = await _authService.registrWithEmailAndPassword(_login.trim(), _password.trim());
+      if(user == null)
+      {
+     Fluttertoast.showToast(
+        msg: "Check password or email.The password must be more than 6 characters",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 2,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+        fontSize: 16.0
+    );
+      }else{
+        
+      }
+
+    
     }
 
     return Scaffold(
@@ -120,7 +168,7 @@ class _AuthcState extends State<Authc> {
         (
           showLogin
         ? Column(children: [
-        _form('login',  _buttonAction),
+        _form('LOGIN',  _loginButtonAction),
           Padding(
             padding: EdgeInsets.all(10),
             child: GestureDetector(child: Text('No registered?',style: TextStyle(fontSize: 20),),
@@ -132,7 +180,7 @@ class _AuthcState extends State<Authc> {
           ,)
         ],) 
         :Column(children: [
-        _form('register',  _buttonAction),
+        _form('REGISTER',  _registerButtonAction),
           Padding(
             padding: EdgeInsets.all(10),
             child: GestureDetector(child: Text('Alredy registered?',style: TextStyle(fontSize: 20),),

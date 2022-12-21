@@ -1,4 +1,3 @@
-import 'dart:html';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_application_1/windows/Auth/services/user.dart';

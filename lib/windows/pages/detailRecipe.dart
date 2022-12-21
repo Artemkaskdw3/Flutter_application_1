@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/windows/api/requesrApi.dart';
 import 'package:flutter_application_1/windows/models/informationOfRecipeDETAIL.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
+import '../Auth/services/database.dart';
 import '../models/AnalyzedRecipeInformation.dart';
 
 class DetailRecipe extends StatefulWidget {
@@ -88,13 +90,12 @@ class _DetailRecipeState extends State<DetailRecipe> {
                       final stepsLenght = stepsSnap!.length;
                       final listSteps = stepsSnap;
 
-                      Widget getInstructions(
-                          List<StepsOfRecipe> listSteps) {
+                      Widget getInstructions(List<StepsOfRecipe> listSteps) {
                         String listStepss = "";
                         for (var i = 0; i < stepsLenght; i++) {
-                          for(var j = 0; j < stepsSnap[i].steps.length; j++){
-
-                            listStepss += stepsSnap[i].steps[j].step + ", " + "\n";
+                          for (var j = 0; j < stepsSnap[i].steps.length; j++) {
+                            listStepss +=
+                                stepsSnap[i].steps[j].step + ", " + "\n";
                           }
                         }
                         return AutoSizeText("Instructions: \n $listStepss",
@@ -102,16 +103,30 @@ class _DetailRecipeState extends State<DetailRecipe> {
                             textAlign: TextAlign.left);
                       }
 
-                        return Column(
-
-                          children: [
-                            Container(
-                             child: getInstructions(listSteps)
+                      return Column(
+                        children: [
+                          Container(child: getInstructions(listSteps)),
+                          Container(
+                            width: 100,
+                            child: ElevatedButton(
+                              onPressed: () {
+                                DatabaseService().addFilmIsFavorites(details);
+                                Fluttertoast.showToast(
+                                    msg: "Добавлен в избранное.",
+                                    toastLength: Toast.LENGTH_SHORT,
+                                    gravity: ToastGravity.CENTER,
+                                    timeInSecForIosWeb: 2,
+                                    backgroundColor: Colors.black,
+                                    textColor: Colors.white,
+                                    fontSize: 16.0);
+                              },
+                              child: Icon(Icons.turned_in),
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.black),
                             ),
-                          ],
-                        );
-
-
+                          ),
+                        ],
+                      );
                     },
                   ))
                 ],

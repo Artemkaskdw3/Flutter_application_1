@@ -11,7 +11,7 @@ import '../models/serachInformation.dart';
 
 class RecipesApi {
   static Future<List<Recipes>> getRecipe() async {
-    Uri url = Uri.parse('https://api.spoonacular.com/recipes/random?number=3');
+    Uri url = Uri.parse('https://api.spoonacular.com/recipes/random?number=10');
     Map<String, String> headers = HashMap();
     headers.addAll({'X-API-KEY': '5715318a4f22412aafba23199118a860'});
     headers.addAll({'content-type': 'application/json'});

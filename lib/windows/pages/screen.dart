@@ -3,10 +3,13 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/windows/Auth/services/authSERVICES.dart';
 import 'package:flutter_application_1/windows/api/requesrApi.dart';
 import 'package:flutter_application_1/windows/models/informationOfRecipe.dart';
 import 'package:flutter_application_1/windows/models/serachInformation.dart';
 import 'package:flutter_application_1/windows/pages/detailRecipe.dart';
+import 'package:flutter_application_1/windows/pages/favorites.dart';
+
 
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
@@ -42,13 +45,24 @@ class _ScreenState extends State<Screen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'ZaEdy',
-          style: TextStyle(fontSize: 30),
-        ),
+        title:   const Text(
+              'ZaEdy',
+              style: TextStyle(
+                fontSize: 30,
+              ),
+            ),
         centerTitle: true,
         backgroundColor: Colors.black,
+        leading:   IconButton(
+              onPressed: () {
+                AuthService().logOut();
+              },
+              icon: Icon(Icons.logout_outlined),
+              alignment: Alignment.centerLeft,
+            ),
         actions: [
+           
+          
           IconButton(
               onPressed: () {
                 setState(() {
@@ -78,8 +92,8 @@ class _ScreenState extends State<Screen> {
                 });
               },
               decoration: InputDecoration(
-                contentPadding: EdgeInsets.symmetric(vertical: 1),
-                hintStyle: TextStyle(color: Colors.black45, fontSize: 25),
+                contentPadding: const EdgeInsets.symmetric(vertical: 1),
+                hintStyle: const TextStyle(color: Colors.black45, fontSize: 25),
                 hintText: "Search",
                 icon: const Icon(Icons.search),
                 filled: true,
@@ -118,6 +132,7 @@ class _ScreenState extends State<Screen> {
                                         child: GestureDetector(
                                           child: Column(
                                             children: [
+                                              
                                               Container(
                                                 alignment: Alignment.topLeft,
                                                 child: Text(
@@ -174,18 +189,10 @@ class _ScreenState extends State<Screen> {
                               itemBuilder: (context, index) {
                                 final recipeSerrch = recipessearch[index];
                                 return Container(
-    //                                decoration: const BoxDecoration(
-    //   border: Border(
-    //     top: BorderSide(color: Colors.black26),
-    //     left: BorderSide(color: Colors.black26),
-    //     right: BorderSide(color: Colors.black26),
-    //     bottom: BorderSide(color: Colors.black26),
-    //   ),
-    //   color: Colors.white,
-    // ),
                                   child: GestureDetector(
                                     child: Column(
                                       children: [
+                                    
                                         Container(
                                           alignment: Alignment.topLeft,
                                           child: Text(
@@ -230,6 +237,20 @@ class _ScreenState extends State<Screen> {
           ),
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.account_circle_rounded),
+        onPressed: () {
+        Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    MainWindow(),
+                                              ),
+                                            );
+      },
+      backgroundColor: Colors.black,
+      
+      )
     );
   }
 }
