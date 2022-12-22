@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/windows/pages/detailRecipe.dart';
 
@@ -26,13 +27,29 @@ class GridWidget extends StatelessWidget {
               margin: const EdgeInsets.only(bottom: 2),
               child: Column(
                 children: [
-                  Text(title.toString()),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(25.0),
-                    child: Image.network(
-                      image,
-                      fit: BoxFit.fill,
+                  Container(
+                    alignment: Alignment.centerLeft,
+                      child: AutoSizeText(
+                    title.toString(),
+                    maxLines: 1,
+                    style: TextStyle(fontSize: 20),
+                  )),
+                  SizedBox(
+                    child: Padding(padding: EdgeInsets.only(bottom: 15)),
+                  ),
+                  Container(
+                    width: 350,
+                    height: 200,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(25.0),
+                      child: Image.network(
+                        image,
+                        fit: BoxFit.fill,
+                      ),
                     ),
+                  ),
+                  SizedBox(
+                    child: Padding(padding: EdgeInsets.only(top: 45)),
                   ),
                 ],
               )),

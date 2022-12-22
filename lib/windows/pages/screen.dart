@@ -2,7 +2,9 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/main.dart';
 import 'package:flutter_application_1/windows/Auth/services/authSERVICES.dart';
 import 'package:flutter_application_1/windows/api/requesrApi.dart';
 import 'package:flutter_application_1/windows/models/informationOfRecipe.dart';
@@ -55,7 +57,11 @@ class _ScreenState extends State<Screen> {
         backgroundColor: Colors.black,
         leading:   IconButton(
               onPressed: () {
+               
                 AuthService().logOut();
+               
+              
+                
               },
               icon: Icon(Icons.logout_outlined),
               alignment: Alignment.centerLeft,

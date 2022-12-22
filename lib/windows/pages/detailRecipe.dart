@@ -19,14 +19,7 @@ class _DetailRecipeState extends State<DetailRecipe> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'ZaEdy',
-          style: TextStyle(fontSize: 30),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.black,
-      ),
+      
       body: SingleChildScrollView(
           child: FutureBuilder<RecipesDetail>(
         future: RecipesApi.getDetailInformation(widget.recipeId),
@@ -50,6 +43,42 @@ class _DetailRecipeState extends State<DetailRecipe> {
 
           return Column(
             children: [
+              AppBar(
+        title: const Text(
+          'ZaEdy',
+          style: TextStyle(fontSize: 30),
+        ),
+        actions: [
+          
+          IconButton(onPressed: () {
+                                DatabaseService().addFilmIsFavorites(details);
+                                Fluttertoast.showToast(
+                                    msg: "Recipe added to favorites",
+                                    toastLength: Toast.LENGTH_SHORT,
+                                    gravity: ToastGravity.CENTER,
+                                    timeInSecForIosWeb: 2,
+                                    backgroundColor: Colors.black,
+                                    textColor: Colors.white,
+                                    fontSize: 16.0);
+                              },
+                              icon: Icon(Icons.turned_in),alignment: Alignment.centerLeft),
+                         IconButton(onPressed: () {
+                                DatabaseService().deleteRecipe(details);
+                                Fluttertoast.showToast(
+                                    msg: "Recipe removed from favorites",
+                                    toastLength: Toast.LENGTH_SHORT,
+                                    gravity: ToastGravity.CENTER,
+                                    timeInSecForIosWeb: 2,
+                                    backgroundColor: Colors.black,
+                                    textColor: Colors.white,
+                                    fontSize: 16.0);
+                              },
+                              icon: Icon(Icons.delete_outline_sharp),)       
+        ],
+        centerTitle: true,
+        backgroundColor: Colors.black,
+      ),
+              
               Container(
                   child: Column(
                 children: [
@@ -66,10 +95,13 @@ class _DetailRecipeState extends State<DetailRecipe> {
                   Container(
                     height: 250,
                     width: 350,
-                    child: Image.network(
-                      details.image ??
-                          "https://spoonacular.com/recipeImages/642054-556x370.jpg",
-                      fit: BoxFit.none,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(25.0),
+                      child: Image.network(
+                        details.image ??
+                            "https://spoonacular.com/recipeImages/642054-556x370.jpg",
+                        fit: BoxFit.none,
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -94,37 +126,19 @@ class _DetailRecipeState extends State<DetailRecipe> {
                         String listStepss = "";
                         for (var i = 0; i < stepsLenght; i++) {
                           for (var j = 0; j < stepsSnap[i].steps.length; j++) {
-                            listStepss +=
-                                stepsSnap[i].steps[j].step + ", " + "\n";
+                            listStepss +="SETP "+stepsSnap[i].steps[j].number.toString()+":\n" + 
+                                stepsSnap[i].steps[j].step + "\n" + "\n";
                           }
                         }
-                        return AutoSizeText("Instructions: \n $listStepss",
+                        return AutoSizeText("\nInstructions: \n $listStepss",
                             style: TextStyle(fontSize: 20),
-                            textAlign: TextAlign.left);
+                            textAlign: TextAlign.left, );
                       }
 
                       return Column(
                         children: [
                           Container(child: getInstructions(listSteps)),
-                          Container(
-                            width: 100,
-                            child: ElevatedButton(
-                              onPressed: () {
-                                DatabaseService().addFilmIsFavorites(details);
-                                Fluttertoast.showToast(
-                                    msg: "Добавлен в избранное.",
-                                    toastLength: Toast.LENGTH_SHORT,
-                                    gravity: ToastGravity.CENTER,
-                                    timeInSecForIosWeb: 2,
-                                    backgroundColor: Colors.black,
-                                    textColor: Colors.white,
-                                    fontSize: 16.0);
-                              },
-                              child: Icon(Icons.turned_in),
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.black),
-                            ),
-                          ),
+                         
                         ],
                       );
                     },

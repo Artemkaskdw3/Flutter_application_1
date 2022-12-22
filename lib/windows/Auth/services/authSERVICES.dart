@@ -1,5 +1,9 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_application_1/main.dart';
+import 'package:flutter_application_1/windows/Auth/landing.dart';
 import 'package:flutter_application_1/windows/Auth/services/user.dart';
 
 class AuthService{
@@ -10,7 +14,7 @@ final FirebaseAuth _FAuth = FirebaseAuth.instance;
         UserCredential result = await _FAuth.signInWithEmailAndPassword(email: email, password: password);
           User? user = result.user;
            return AuthUser.fromFirebase(user);
-      }catch(e){
+      }on FirebaseException catch(e){
         return null;
       }
     }
@@ -20,14 +24,16 @@ final FirebaseAuth _FAuth = FirebaseAuth.instance;
         UserCredential result = await _FAuth.createUserWithEmailAndPassword(email: email, password: password);
           User? user = result.user;
            return AuthUser.fromFirebase(user);
-      }catch(e){
+      }on FirebaseException catch(e){
         return null;
       }
     }
     
-    Future logOut() async{
-      await _FAuth.signOut();
-    }
+     Future logOut() async {
+    await _FAuth.signOut();
+
+   
+  }
       Stream<AuthUser?> get currentUser {
     return _FAuth
         .authStateChanges()

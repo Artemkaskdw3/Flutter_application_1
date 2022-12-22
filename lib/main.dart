@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return StreamProvider<AuthUser?>.value(
       value: AuthService().currentUser,
       child: MaterialApp(

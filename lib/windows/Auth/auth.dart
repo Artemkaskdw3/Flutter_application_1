@@ -137,9 +137,11 @@ class _AuthcState extends State<Authc> {
     
     }
       void _registerButtonAction()async{
+              
+
       _login = _loginContller.text;
       _password =  _passwordContller.text;
-
+      
       if(_login.isEmpty || _password.isEmpty) return;
 
       AuthUser? user = await _authService.registrWithEmailAndPassword(_login.trim(), _password.trim());

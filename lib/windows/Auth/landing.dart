@@ -8,12 +8,11 @@ import 'package:provider/provider.dart';
 class LandingPage extends StatelessWidget {
   const LandingPage({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    final AuthUser? user = Provider.of<AuthUser?>(context);
-
-    final bool isLoggedIn = user != null;
-
-    return isLoggedIn ? Screen() : Authc();
-  }
+@override
+Widget build(BuildContext context){
+     final AuthUser? user = Provider.of<AuthUser?>(context);
+    final bool isLoggedIn = user !=null;
+  
+  return isLoggedIn ? Screen() : Authc();
+}
 }

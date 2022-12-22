@@ -15,9 +15,18 @@ class MainWindow extends StatefulWidget {
 
 class _MainWindowState extends State<MainWindow> {
   @override
+    final ScrollController _controller = ScrollController();
+
+  void _scrollToTop() {
+    if (_controller.hasClients) {
+      _controller.animateTo(0,
+          duration: const Duration(milliseconds: 30), curve: Curves.linear);
+    }
+  }
   Widget build(BuildContext context) {
     User? user = FirebaseAuth.instance.currentUser;
     final uid = AuthUser.fromFirebase(user).id;
+    
     final Stream<QuerySnapshot> _isFavorite = FirebaseFirestore.instance
         .collection(uid.toString())
         .where('favorites', isEqualTo: true)
@@ -30,11 +39,22 @@ class _MainWindowState extends State<MainWindow> {
                 fontSize: 30,
               ),
             ),
+            actions: [
+              IconButton(
+              onPressed: () {
+                setState(() {
+                  _scrollToTop();
+                  _MainWindowState();
+                });
+              },
+              icon: Icon(Icons.refresh)),
+            ],
         centerTitle: true,
         backgroundColor: Colors.black,
         ),
       body: Container(
-          margin: const EdgeInsets.only(top: 10, right: 8, left: 8),
+        
+          margin: const EdgeInsets.only(top: 10, right: 10, left: 10),
           child: Column(children: [
             StreamBuilder<QuerySnapshot>(
                 stream: _isFavorite,
@@ -48,22 +68,35 @@ class _MainWindowState extends State<MainWindow> {
                         padding: const EdgeInsets.only(top: 250),
                         width: 200,
                         child: const AutoSizeText(
-                          "Упс! Кажется тут ничего нет \n\t добавьте фильм в список!",
+                          "Oh!Nothing in favorites!",
                           style: TextStyle(fontSize: 14),
                           overflow: TextOverflow.ellipsis,
                         ));
                   }
-                  return Column(
-                    children: snapshot.data!.docs
-                                        .map<Widget>((DocumentSnapshot document) {
-                                      Map<String, dynamic> data =
-                                          document.data() as Map<String, dynamic>;
-                                          return GridWidget(id: data['recipeId'],
-                                          title: data['title'],
-                                          image: data['image'].toString()
-                                          );
-                                            
-                                    }).toList(),
+                  return Expanded(
+                    
+                    child: SizedBox(
+                      height: 200,
+                      child: ListView(
+                                    // gridDelegate:
+                                    //     const SliverGridDelegateWithFixedCrossAxisCount(
+                                    //   mainAxisExtent: 200,
+                                    //   mainAxisSpacing: 100,
+                                    //   crossAxisSpacing: 10,
+                                    //   crossAxisCount: 1,
+                                    // ),
+                      children: snapshot.data!.docs
+                                            .map<Widget>((DocumentSnapshot document) {
+                                          Map<String, dynamic> data =
+                                              document.data() as Map<String, dynamic>;
+                                              return GridWidget(id: data['recipeId'],
+                                              title: data['title'],
+                                              image: data['image'].toString()
+                                              );
+                                                
+                                        }).toList(),
+                      ),
+                    ),
                   );
                 })
           ])),
